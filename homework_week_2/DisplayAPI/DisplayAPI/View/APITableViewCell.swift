@@ -10,7 +10,7 @@ import UIKit
 class APITableViewCell: UITableViewCell {
     static var identifier = "APITableViewCell"
     
-    private let idLabel:UILabel = {
+     let idLabel:UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textColor = .blue

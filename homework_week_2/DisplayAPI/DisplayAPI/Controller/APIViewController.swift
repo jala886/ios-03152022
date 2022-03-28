@@ -93,6 +93,9 @@ extension APIViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: APITableViewCell.identifier, for: indexPath) as! APITableViewCell
         let row = indexPath.row
         let data = self.data[row]
+        if data.status == true{
+            cell.idLabel.textColor = .green
+        }
         cell.configure(id:data.id,status:data.status ?? false)
         return cell
     }
@@ -114,11 +117,14 @@ extension APIViewController: UITableViewDataSource, UITableViewDelegate{
             destination.data = self.data[currentRow]
             destination.recall = {[weak self] status in
                 self?.data[currentRow].status = status
+                self?.tabView.reloadData()
                 //self?.saveData()
             }
         }
     }
-    
+    @IBAction func unwind(segue:UIStoryboardSegue){
+        
+    }
     
     
     

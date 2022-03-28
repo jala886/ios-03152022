@@ -44,8 +44,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="oNg-ti-9S0"/>
+                    <connections>
+                        <segue destination="rDj-DZ-xv2" kind="unwind" unwindAction="unwindWithSegue:" id="mc7-Hl-WgX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8K-Lz-txO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rDj-DZ-xv2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1767" y="98"/>
         </scene>
