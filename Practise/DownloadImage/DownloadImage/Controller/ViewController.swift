@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         db.setTitle("Load a new Image", for: .normal)
         db.translatesAutoresizingMaskIntoConstraints = false
         db.addTarget(self, action: #selector(downloadImage), for: .touchUpInside)
+        db.backgroundColor = .orange
+        db.contentEdgeInsets=UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        db.layer.cornerRadius=5
         return db
     }()
 
@@ -41,7 +44,7 @@ class ViewController: UIViewController {
             //downloadButton.leadingAnchor.constraint(equalTo: saftArea.leadingAnchor),
             //downloadButton.trailingAnchor.constraint(equalTo: saftArea.trailingAnchor),
             
-            imageView.bottomAnchor.constraint(equalTo: downloadButton.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: downloadButton.topAnchor,constant: -5),
             imageView.topAnchor.constraint(equalTo: saftArea.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: saftArea.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: saftArea.trailingAnchor)
@@ -49,6 +52,7 @@ class ViewController: UIViewController {
     }
 
     @objc func downloadImage(){
+        print(self.view.frame)
         let urlStr = "https://picsum.photos/\(String(format:"%.0f",size.width))/\(String(format:"%.0f",size.height))"
         print(urlStr)
         guard let url = URL(string:urlStr) else{return}
