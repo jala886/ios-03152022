@@ -19,6 +19,7 @@
 		02CD9CCD28134D8F00FA084B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD9CCC28134D8F00FA084B /* NetworkManager.swift */; };
 		02CD9CCF2813651E00FA084B /* DownloadURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD9CCE2813651E00FA084B /* DownloadURLs.swift */; };
 		02CD9CD228136B7400FA084B /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD9CD128136B7400FA084B /* StoryModel.swift */; };
+		02ED781028175F4100AB372D /* ImageSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED780F28175F4100AB372D /* ImageSequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		02CD9CCC28134D8F00FA084B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		02CD9CCE2813651E00FA084B /* DownloadURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadURLs.swift; sourceTree = "<group>"; };
 		02CD9CD128136B7400FA084B /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
+		02ED780F28175F4100AB372D /* ImageSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				02CD9CCC28134D8F00FA084B /* NetworkManager.swift */,
 				02CD9CCE2813651E00FA084B /* DownloadURLs.swift */,
+				02ED780F28175F4100AB372D /* ImageSequence.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				02CD9CCF2813651E00FA084B /* DownloadURLs.swift in Sources */,
 				02CD9CCB28134D7900FA084B /* StoryViewModel.swift in Sources */,
 				02CD9C9928134CA000FA084B /* RedditSwiftUIApp.swift in Sources */,
+				02ED781028175F4100AB372D /* ImageSequence.swift in Sources */,
 				02CD9CD228136B7400FA084B /* StoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
