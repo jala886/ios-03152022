@@ -62,7 +62,6 @@ class PocketMonsterUITests: XCTestCase {
             }
         }
     }
-    
     func testURL() throws {
         
 //        let network = NetworkManager()

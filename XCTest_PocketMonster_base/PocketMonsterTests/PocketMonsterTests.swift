@@ -21,6 +21,7 @@ class PocketMonsterTests: XCTestCase {
         let network = NetworkManager()
         network.url = "^:ht:badurl"
         //var res:PokemonResponse
+        let expectation = expectation(description: "url")
         Task{
             do{
                let res = try await network.getResponseType(PokemonResponse.self)
@@ -28,11 +29,14 @@ class PocketMonsterTests: XCTestCase {
                 XCTAssertNotNil(res)
                 //XCTAssert(res != nil)
                 XCTAssert(res.results.count == 100)
+                
             }catch(let e){
                 print(e.localizedDescription)
                 XCTAssertNotNil(e)
             }
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 30)
         
     }
     func testExample() throws {
@@ -43,6 +47,7 @@ class PocketMonsterTests: XCTestCase {
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
         let network = NetworkManager()
         network.url = NetworkURL.pokemonsNamesURL
+        let exp = expectation(description: "test")
         //var res:PokemonResponse
         Task{
             do{
@@ -51,10 +56,12 @@ class PocketMonsterTests: XCTestCase {
                 XCTAssertNotNil(res)
                 //XCTAssert(res != nil)
                 XCTAssert(res.results.count == 100)
+                exp.fulfill()
             }catch(let e){
                 print(e.localizedDescription)
             }
         }
+        waitForExpectations(timeout: 10)
         
     }
     func testGetData() async throws{
@@ -73,9 +80,8 @@ class PocketMonsterTests: XCTestCase {
             return data
         }.value
     }
-    func testListViewModel() throws{
+    func testListViewModel() async throws{
         let vm = PokemonListViewModel()
-        Task{
             try await vm.loadPokemons()
             print(vm.pokemons.count)
             XCTAssert(vm.pokemons != nil)
@@ -84,10 +90,8 @@ class PocketMonsterTests: XCTestCase {
                 $0 = $0 && $1==nil
             }
             print("testview",testRes)
-            XCTAssert(testRes)
+            //XCTAssert(testRes)
             XCTAssertNotNil(vm.pokemons.first?.imgData)
-
-        }
     }
 //    func testListViewModel2() throws{
 //        let vm = PokemonListViewModel()
@@ -130,17 +134,14 @@ class PocketMonsterTests: XCTestCase {
         XCTAssertNotNil(view.pokemon.imgData)
         
     }
-    func testLoadAllImage() throws{
+    func testLoadAllImage() async throws{
         let vm = PokemonListViewModel()
-        Task{
             var imageUrls = [String:String]()
             imageUrls["diglett"] = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png"
             imageUrls["bulbasaur"] = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
             //let data = try await vm.downloadAllImages(from:imageUrls)
-        }
     }
-    func testImageLoader() throws{
-        Task{
+    func testImageLoader() async throws{
             var result: [String: Data] = [:]
             var imageUrls = [String:String]()
             imageUrls["diglett"] = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png"
@@ -150,7 +151,6 @@ class PocketMonsterTests: XCTestCase {
                 guard let key = response.keys.first, let value = response.values.first
                 else { continue }
                 result[key] = value
-            }
             XCTAssert(result.count != 0)
         }
     }
