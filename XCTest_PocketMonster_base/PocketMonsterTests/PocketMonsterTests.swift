@@ -16,7 +16,25 @@ class PocketMonsterTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    func testURL() throws {
+        
+        let network = NetworkManager()
+        network.url = "^:ht:badurl"
+        //var res:PokemonResponse
+        Task{
+            do{
+               let res = try await network.getResponseType(PokemonResponse.self)
+                print("count count",res.results.count)
+                XCTAssertNotNil(res)
+                //XCTAssert(res != nil)
+                XCTAssert(res.results.count == 100)
+            }catch(let e){
+                print(e.localizedDescription)
+                XCTAssertNotNil(e)
+            }
+        }
+        
+    }
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

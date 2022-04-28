@@ -30,7 +30,7 @@ class PocketMonsterUITests: XCTestCase {
                         
         //let app = XCUIApplication()
         let tablesQuery = app.tables
-        sleep(10)
+        sleep(30)
 
         tablesQuery.cells["Ivysaur"].tap()
         sleep(1)
@@ -44,6 +44,8 @@ class PocketMonsterUITests: XCTestCase {
         app.menuItems.element(boundBy: 0).tap()
 //        //searchText.typeText("iv")
         print("****",type(of:searchText))
+        
+        
 
 //        app.navigationBars["_TtGC7SwiftUI19UIHosting"].buttons["PokeDex"].tap()
 //        tablesQuery.cells["Charmeleon"].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
@@ -61,5 +63,11 @@ class PocketMonsterUITests: XCTestCase {
         }
     }
     
+    func testURL() throws {
+        
+//        let network = NetworkManager()
+//        network.url = "^:ht:badurl"
+        
+    }
 
 }
