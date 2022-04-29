@@ -27,6 +27,15 @@ class ViewController: UIViewController {
             }
             
         }
+        AppData.shared.reset()
+        // solved 2
+        let lock = NSLock()
+        DispatchQueue.concurrentPerform(iterations:count) { (index) in
+            lock.lock()
+                AppData.shared.set(value:index,key:String(index))
+            lock.unlock()
+            
+        }
     }
 }
 
