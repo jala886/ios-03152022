@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020A27E028185CF200F926FB /* PocketMonsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A27DF28185CF200F926FB /* PocketMonsterUITests.swift */; };
+		020F84C5281C5777007A7FAD /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F84C4281C5777007A7FAD /* FakeNetwork.swift */; };
+		020F84C7281C57E7007A7FAD /* Pocket_view.json in Resources */ = {isa = PBXBuildFile; fileRef = 020F84C6281C57E7007A7FAD /* Pocket_view.json */; };
 		02112ED828198F78001D712D /* PocketMonsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02112ED728198F77001D712D /* PocketMonsterUITests.swift */; };
 		02ED78322818268500AB372D /* PocketMonsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED7826281820BE00AB372D /* PocketMonsterTests.swift */; };
 		4759274A28117F500042F03F /* ImagesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759274928117F500042F03F /* ImagesLoader.swift */; };
@@ -46,7 +47,8 @@
 
 /* Begin PBXFileReference section */
 		020A27DD28185CF200F926FB /* PocketMonsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketMonsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		020A27DF28185CF200F926FB /* PocketMonsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketMonsterUITests.swift; sourceTree = "<group>"; };
+		020F84C4281C5777007A7FAD /* FakeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetwork.swift; sourceTree = "<group>"; };
+		020F84C6281C57E7007A7FAD /* Pocket_view.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pocket_view.json; sourceTree = "<group>"; };
 		02112ED728198F77001D712D /* PocketMonsterUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketMonsterUITests.swift; sourceTree = "<group>"; };
 		02ED7817281820AF00AB372D /* PocketMonsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketMonsterUITests.swift; sourceTree = "<group>"; };
 		02ED7824281820BE00AB372D /* PocketMonsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketMonsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,14 +97,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		020A27DE28185CF200F926FB /* PocketMonsterUITests */ = {
-			isa = PBXGroup;
-			children = (
-				020A27DF28185CF200F926FB /* PocketMonsterUITests.swift */,
-			);
-			path = PocketMonsterUITests;
-			sourceTree = "<group>";
-		};
 		02ED7816281820AF00AB372D /* PocketMonsterUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				02ED7826281820BE00AB372D /* PocketMonsterTests.swift */,
+				020F84C4281C5777007A7FAD /* FakeNetwork.swift */,
+				020F84C6281C57E7007A7FAD /* Pocket_view.json */,
 			);
 			path = PocketMonsterTests;
 			sourceTree = "<group>";
@@ -134,7 +130,6 @@
 				4778462D2810AE530055722F /* PocketMonster */,
 				02ED7816281820AF00AB372D /* PocketMonsterUITests */,
 				02ED7825281820BE00AB372D /* PocketMonsterTests */,
-				020A27DE28185CF200F926FB /* PocketMonsterUITests */,
 				4778462C2810AE530055722F /* Products */,
 				02ED782E2818233600AB372D /* Frameworks */,
 			);
@@ -323,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020F84C7281C57E7007A7FAD /* Pocket_view.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020A27E028185CF200F926FB /* PocketMonsterUITests.swift in Sources */,
 				02112ED828198F78001D712D /* PocketMonsterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02ED78322818268500AB372D /* PocketMonsterTests.swift in Sources */,
+				020F84C5281C5777007A7FAD /* FakeNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
