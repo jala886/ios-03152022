@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 final class NetworkManager {
     
     var url: String = ""

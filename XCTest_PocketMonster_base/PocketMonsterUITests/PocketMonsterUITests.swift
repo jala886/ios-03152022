@@ -7,7 +7,9 @@
 
 import XCTest
 @testable import PocketMonster
-
+extension PokemonListView{
+    func presentAlert(title: String, message : String) {print("alertTest") /* ... */ }
+}
 class PocketMonsterUITests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -17,6 +19,7 @@ class PocketMonsterUITests: XCTestCase {
         continueAfterFailure = false
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
     }
 
     override func tearDownWithError() throws {
@@ -25,24 +28,34 @@ class PocketMonsterUITests: XCTestCase {
 
     func testExample() throws {
         // UI tests must launch the application that they test.
+        
         let app = XCUIApplication()
                 app.launch()
-                        
+        
+        
+
         //let app = XCUIApplication()
         let tablesQuery = app.tables
-        sleep(30)
-
+        
+        var searchText = app.searchFields["Search pokemon"]
+//        searchText.tap()
+//        searchText.doubleTap()
+//        app.keyboards.buttons["i"].tap()
+//        app.keys["v"].tap()
+//        sleep(30)
+        
+        sleep(10)
         tablesQuery.cells["Ivysaur"].tap()
         sleep(1)
         app.navigationBars.buttons["PokeDex"].tap()
-        //app.searchFields["Search pokemon"].typeText("iv")
-        var searchText = app.searchFields["Search pokemon"]
         searchText.tap()
+        app.searchFields["Search pokemon"].typeText("iv")
+        
         UIPasteboard.general.string = "iv"
         searchText.doubleTap()
         //app.menus["Paste"].tap()
         app.menuItems.element(boundBy: 0).tap()
-//        //searchText.typeText("iv")
+        //searchText.typeText("iv")
         print("****",type(of:searchText))
         
         

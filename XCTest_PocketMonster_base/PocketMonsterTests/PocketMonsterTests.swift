@@ -59,6 +59,7 @@ class PocketMonsterTests: XCTestCase {
                 exp.fulfill()
             }catch(let e){
                 print(e.localizedDescription)
+                fatalError("meet some problems")
             }
         }
         waitForExpectations(timeout: 10)
